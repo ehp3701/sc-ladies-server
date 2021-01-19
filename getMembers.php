@@ -1,4 +1,6 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+header('Content-type: application/json');
 $dbconn = pg_connect(
     "host=ec2-54-159-107-189.compute-1.amazonaws.com
     dbname=d4vupmidnt9lio
