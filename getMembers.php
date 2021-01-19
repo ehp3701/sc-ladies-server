@@ -12,16 +12,16 @@ $dbconn = pg_connect(
 $query = 'SELECT * FROM members';
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
-if (mysqli_num_rows($result) > 0) {
-    echo "greater than zero";
-    // $emparray = array();
+// if (mysqli_num_rows($result) > 0) {
+//     echo "greater than zero";
+//     // $emparray = array();
     // while ($row = pg_fetch_array($result, null, PGSQL_ASSOC)) {
     //     array_push($emparray, $row);
     // }
     // echo json_encode($emparray);
-} else {
-    echo "0 results";
-}
+// } else {
+//     echo "0 results";
+// }
 
 // Free resultset
 pg_free_result($result);
