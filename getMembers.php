@@ -1,6 +1,4 @@
 <?php
-echo "TRYING";
-// Connecting, selecting database
 $dbconn = pg_connect(
     "host=ec2-54-159-107-189.compute-1.amazonaws.com
     dbname=d4vupmidnt9lio
@@ -9,16 +7,10 @@ $dbconn = pg_connect(
 )
     or die('Could not connect: ' . pg_last_error());
 
-echo "<br>CONNECTED";
-    
-// Performing SQL query
 $query = 'SELECT * FROM members';
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
-echo "<br>QUERYED";
-
-if (pg_num_rows ($result) > 0) {
-    echo "greater than zero";
+if (pg_num_rows($result) > 0) {
     $emparray = array();
     while ($row = pg_fetch_array($result, null, PGSQL_ASSOC)) {
         array_push($emparray, $row);
@@ -28,11 +20,6 @@ if (pg_num_rows ($result) > 0) {
     echo "0 results";
 }
 
-// Free resultset
-// pg_free_result($result);
+pg_free_result($result);
 
-// Closing connection
-// pg_close($dbconn);
-
-
-echo "<br>SUCCESS";
+pg_close($dbconn);
