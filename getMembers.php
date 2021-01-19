@@ -9,9 +9,9 @@ $dbconn = pg_connect(
     password=7249b272a62aa3dd8811627fb3d1be4dfe052d015bd6c162834bcb92fe844598")
     or die('Could not connect: ' . pg_last_error());
 
-// // Performing SQL query
-// $query = 'SELECT * FROM authors';
-// $result = pg_query($query) or die('Query failed: ' . pg_last_error());
+// Performing SQL query
+$query = 'SELECT * FROM authors';
+$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
 // // Printing results in HTML
 // echo "<table>\n";
