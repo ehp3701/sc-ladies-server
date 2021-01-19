@@ -9,11 +9,13 @@ $dbconn = pg_connect(
 )
     or die('Could not connect: ' . pg_last_error());
 
-echo "CONNECTED";
+echo "<br>CONNECTED";
     
 // Performing SQL query
-// $query = 'SELECT * FROM members';
-// $result = pg_query($query) or die('Query failed: ' . pg_last_error());
+$query = 'SELECT * FROM members';
+$result = pg_query($query) or die('Query failed: ' . pg_last_error());
+
+echo "<br>QUERYED";
 
 // if (mysqli_num_rows($result) > 0) {
 //     echo "greater than zero";
