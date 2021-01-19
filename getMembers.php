@@ -19,11 +19,11 @@ echo "<br>QUERYED";
 
 if (pg_num_rows ($result) > 0) {
     echo "greater than zero";
-//     // $emparray = array();
-    // while ($row = pg_fetch_array($result, null, PGSQL_ASSOC)) {
-    //     array_push($emparray, $row);
-    // }
-    // echo json_encode($emparray);
+    $emparray = array();
+    while ($row = pg_fetch_array($result, null, PGSQL_ASSOC)) {
+        array_push($emparray, $row);
+    }
+    echo json_encode($emparray);
 } else {
     echo "0 results";
 }
@@ -36,4 +36,3 @@ if (pg_num_rows ($result) > 0) {
 
 
 echo "<br>SUCCESS";
-?>
