@@ -9,6 +9,8 @@ $dbconn = pg_connect(
 )
     or die('Could not connect: ' . pg_last_error());
 
+echo "CONNECTED";
+    
 // Performing SQL query
 // $query = 'SELECT * FROM members';
 // $result = pg_query($query) or die('Query failed: ' . pg_last_error());
