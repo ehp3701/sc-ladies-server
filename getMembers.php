@@ -1,12 +1,12 @@
 <?php
 
 // Connecting, selecting database
-$dbconn = pg_connect(
-    "host=localhost 
-    dbname=publishing 
-    user=www 
-    password=foo")
-    or die('Could not connect: ' . pg_last_error());
+// $dbconn = pg_connect(
+//     "host=localhost 
+//     dbname=publishing 
+//     user=www 
+//     password=foo")
+//     or die('Could not connect: ' . pg_last_error());
 
 // // Performing SQL query
 // $query = 'SELECT * FROM authors';
@@ -27,7 +27,7 @@ $dbconn = pg_connect(
 // pg_free_result($result);
 
 // Closing connection
-pg_close($dbconn);
+// pg_close($dbconn);
 
 echo "SUCCESS SUCCESS SUCCESS ";
 ?>
