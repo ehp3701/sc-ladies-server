@@ -1,38 +1,33 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-header('Content-type: application/json');
 
-$servername = "us-cdbr-east-02.cleardb.com";
-$username = "bba24055c8d688";
-$password = "3f77c22e";
-$dbname = "heroku_53af93e86477739";
+// Connecting, selecting database
+$dbconn = pg_connect(
+    "host=localhost 
+    dbname=publishing 
+    user=www 
+    password=foo")
+    or die('Could not connect: ' . pg_last_error());
 
-/* $servername = "localhost";
-$username = "ehp";
-$password = "ehp";
-$dbname = "steelclubladies"; */
+// // Performing SQL query
+// $query = 'SELECT * FROM authors';
+// $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
+// // Printing results in HTML
+// echo "<table>\n";
+// while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
+//     echo "\t<tr>\n";
+//     foreach ($line as $col_value) {
+//         echo "\t\t<td>$col_value</td>\n";
+//     }
+//     echo "\t</tr>\n";
+// }
+// echo "</table>\n";
 
-$sql = "SELECT * FROM members order by lastname;";
-$result = mysqli_query($conn, $sql);
+// // Free resultset
+// pg_free_result($result);
 
-if (mysqli_num_rows($result) > 0) {
-  $emparray = array();
-  while($row =mysqli_fetch_assoc($result))
-  {
-    array_push($emparray,$row);
-  }
-  echo json_encode($emparray);
-} else {
-  echo "0 results";
-}
+// Closing connection
+pg_close($dbconn);
 
-
-mysqli_close($conn);
+echo "SUCCESS SUCCESS SUCCESS ";
 ?>
