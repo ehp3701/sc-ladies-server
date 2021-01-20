@@ -2,10 +2,10 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-type: application/json');
 $dbconn = pg_connect(
-    "host=ec2-54-159-107-189.compute-1.amazonaws.com
-    dbname=d4vupmidnt9lio
-    user=igqywybsdluyqg
-    password=7249b272a62aa3dd8811627fb3d1be4dfe052d015bd6c162834bcb92fe844598"
+    "host=ec2-18-208-49-190.compute-1.amazonaws.com
+    dbname=d6fv2q17lqpnqe
+    user=hlqlwhlsanjvke
+    password=0b87775eab64e77490e65d6c639b9ddf782e62e3acccb0017d301dab571c0eb7"
 )
     or die('Could not connect: ' . pg_last_error());
 
