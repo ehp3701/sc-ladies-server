@@ -2,10 +2,8 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-type: application/json');
 
-$json = file_get_contents('php://input'); 
-$data = json_decode($json); 
-
-// $data = (object) ['gamedesc' => "This is the new game", "teamevent" => "Y"];
+$json = file_get_contents('php://input');
+$data = json_decode($json);
 
 $gamedesc = $data->gamedesc;
 $teamevent = $data->teamevent;
@@ -27,12 +25,3 @@ if ($result = pg_query($sql)) {
 }
 
 pg_close($dbconn);
-
-echo "gamedesc = $gamedesc <br>";
-echo "teamevent = $teamevent <br>";
-
-
-
-echo "OK OK OK";
-?>
-?>
