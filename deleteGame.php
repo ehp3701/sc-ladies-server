@@ -12,7 +12,7 @@ $dbconn = pg_connect(
 )
     or die('Could not connect: ' . pg_last_error());
 
-$query = "DELETE FROM gamedesc WHERE key='$key'";
+$query = "DELETE FROM gamedesc WHERE key=$key";
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
 if (pg_num_rows($result) > 0) {
