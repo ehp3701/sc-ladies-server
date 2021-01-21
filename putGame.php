@@ -22,5 +22,6 @@ if (mysqli_query($conn, $sql)) {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
+echo "DONE DONE DONE putGame";
 mysqli_close($conn);
 ?>
