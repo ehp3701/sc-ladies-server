@@ -13,8 +13,8 @@ $dbconn = pg_connect(
 
  echo "<h1>putting game on server</h1>";
     
-// $sql = "INSERT INTO MyGuests (firstname, lastname, email)
-// VALUES ('John', 'Doe', 'john@example.com')";
+$sql = "INSERT INTO gamedesc (desc, treatment)
+VALUES ('A test game', 'N')";
 
 if (mysqli_query($conn, $sql)) {
   echo "New record created successfully";
