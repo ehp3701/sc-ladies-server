@@ -3,9 +3,9 @@ header('Access-Control-Allow-Origin: *');
 header('Content-type: application/json');
 
 
-// $key = $_GET("key");
+$gamekey = $_GET("gamekey");
 
-echo "Key is $key";
+echo "Key is $gamekey";
 
 
 // $dbconn = pg_connect(
