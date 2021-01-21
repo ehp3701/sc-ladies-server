@@ -3,7 +3,7 @@ header('Access-Control-Allow-Origin: *');
 header('Content-type: application/json');
 
 
-$key = $_GET("key");
+// $key = $_GET("key");
 
 echo "Key is $key";
 
@@ -35,3 +35,4 @@ echo "Key is $key";
 // pg_free_result($result);
 
 // pg_close($dbconn);
+?>
