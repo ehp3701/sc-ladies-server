@@ -5,10 +5,10 @@ header('Content-type: application/json');
 // $json = file_get_contents('php://input'); 
 // $data = json_decode($json); 
 
-$data = (object) ['gamedesc' => "This is the new game", "teamevent" => "Y"];
+// $data = (object) ['gamedesc' => "This is the new game", "teamevent" => "Y"];
 
-$gamedesc = $data->gamedesc;
-$teamevent = $data->teamevent;
+// $gamedesc = $data->gamedesc;
+// $teamevent = $data->teamevent;
 
 // $dbconn = pg_connect(
 //     "host=ec2-18-208-49-190.compute-1.amazonaws.com
@@ -28,8 +28,11 @@ $teamevent = $data->teamevent;
 
 // pg_close($dbconn);
 
-echo "gamedesc = $gamedesc <br>";
-echo "teamevent = $teamevent <br>";
+// echo "gamedesc = $gamedesc <br>";
+// echo "teamevent = $teamevent <br>";
 
+
+
+echo "OK OK OK";
 ?>
 ?>
