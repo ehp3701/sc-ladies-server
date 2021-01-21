@@ -2,8 +2,10 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-type: application/json');
 
-$json = file_get_contents('php://input'); 
-$data = json_decode($json); 
+// $json = file_get_contents('php://input'); 
+// $data = json_decode($json); 
+
+$data = (object) ['gamedesc' => "This is the new game", "teamevent" => "Y"];
 
 $gamedesc = $data->gamedesc;
 $teamevent = $data->teamevent;
