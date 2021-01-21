@@ -2,6 +2,9 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-type: application/json');
 
+$gamedesc = $_POST('gamedesc');
+$teamevent = $_POST('teamevent');
+
 $dbconn = pg_connect(
     "host=ec2-18-208-49-190.compute-1.amazonaws.com
     dbname=d6fv2q17lqpnqe
@@ -10,19 +13,14 @@ $dbconn = pg_connect(
 )
     or die('Could not connect: ' . pg_last_error());
 
+$sql = "INSERT INTO gamedesc (gamedesc, teamevent)  VALUES ('$gamedesc', '$teamevent')";
 
-
- echo "<h1>putting game on server</h1>";
-    
-$sql = "INSERT INTO gamedesc (desc, treatment)
-VALUES ('A test game', 'N')";
-
-if (mysqli_query($conn, $sql)) {
-  echo "New record created successfully";
+if ($result = pg_query($sql)) {
+    echo "Data Added Successfully.";
 } else {
-  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    echo "Error.";
 }
 
-echo "DONE DONE DONE putGame";
-mysqli_close($conn);
+pg_close($dbconn);
+?>
 ?>
