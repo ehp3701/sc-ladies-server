@@ -2,10 +2,10 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-type: application/json');
 
-echo "WORKING WORKING";
+echo "WORKING WORKING again";
 
-$json = file_get_contents('php://input');
-$data = json_decode($json);
+// $json = file_get_contents('php://input');
+// $data = json_decode($json);
 
 // echo "json";
 // echo $data;
