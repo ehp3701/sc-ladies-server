@@ -2,13 +2,17 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-type: application/json');
 
-echo "WORKING WORKING again 111";
+echo "putGame.php";
 
 $json = file_get_contents('php://input');
 $data = json_decode($json);
 
-echo "json";
-echo $data;
+$key = $data->key;
+$gamedesc = $data->gamedesc;
+$teamevent = $data->teamevent;
+
+$sql = "UPDATE gamedesc  SET gamedesc = $gamedesc, teamevent = $teamevent WHERE key = $key";
+echo $sql;
 
 // $key = $data->key;
 // $gamedesc = $data->gamedesc;
