@@ -11,7 +11,7 @@ $key = $data->key;
 $gamedesc = $data->gamedesc;
 $teamevent = $data->teamevent;
 
-$sql = "UPDATE gamedesc  SET gamedesc = $gamedesc, teamevent = $teamevent WHERE key = $key";
+$sql = "UPDATE gamedesc  SET gamedesc = '$gamedesc', teamevent = '$teamevent' WHERE key = $key";
 echo $sql;
 
 // $key = $data->key;
