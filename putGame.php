@@ -5,6 +5,9 @@ header('Content-type: application/json');
 $json = file_get_contents('php://input');
 $data = json_decode($json);
 
+echo "json";
+echo $data;
+
 $key = $data->key;
 $gamedesc = $data->gamedesc;
 $teamevent = $data->teamevent;
@@ -19,10 +22,12 @@ $dbconn = pg_connect(
 
 $sql = "UPDATE gamedesc  SET gamedesc = $gamedesc, teamevent = $teamevent WHERE key = $key";
 
-if ($result = pg_query($sql)) {
-    echo "Data Updated Successfully.";
-} else {
-    echo "Error.";
-}
+// if ($result = pg_query($sql)) {
+//     echo "Data Updated Successfully.";
+// } else {
+//     echo "Error.";
+// }
+
+echo $sql;
 
 pg_close($dbconn);
