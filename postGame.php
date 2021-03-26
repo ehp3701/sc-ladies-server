@@ -16,7 +16,7 @@ $dbconn = pg_connect(
 )
 or die('Could not connect: ' . pg_last_error());
 
-$sql = "INSERT INTO gamedesc (gamedesc, teamevent)  VALUES ('$gamedesc', '$teamevent')";
+$sql = "INSERT INTO games (gamedesc, teamevent)  VALUES ('$gamedesc', '$teamevent')";
 
 if ($result = pg_query($sql)) {
     echo "Data Added Successfully.";
