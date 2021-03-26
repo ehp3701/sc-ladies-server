@@ -2,7 +2,7 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-type: application/json');
 
-$key = $_GET["key"];
+$id = $_GET["id"];
 
 $dbconn = pg_connect(
     "host=ec2-18-208-49-190.compute-1.amazonaws.com
@@ -12,7 +12,7 @@ $dbconn = pg_connect(
 )
     or die('Could not connect: ' . pg_last_error());
 
-$query = "DELETE FROM gamedesc WHERE key=$key";
+$query = "DELETE FROM games WHERE id=$id";
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
 if (pg_num_rows($result) > 0) {
