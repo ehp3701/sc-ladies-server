@@ -14,7 +14,7 @@ $dbconn = pg_connect(
     user=hlqlwhlsanjvke
     password=0b87775eab64e77490e65d6c639b9ddf782e62e3acccb0017d301dab571c0eb7"
 )
-    or die('Could not connect: ' . pg_last_error());
+or die('Could not connect: ' . pg_last_error());
 
 $sql = "INSERT INTO gamedesc (gamedesc, teamevent)  VALUES ('$gamedesc', '$teamevent')";
 
