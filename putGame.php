@@ -7,11 +7,11 @@ echo "putGame.php";
 $json = file_get_contents('php://input');
 $data = json_decode($json);
 
-$key = $data->key;
+$id = $data->id;
 $gamedesc = $data->gamedesc;
 $teamevent = $data->teamevent;
 
-$sql = "UPDATE gamedesc  SET gamedesc = '$gamedesc', teamevent = '$teamevent' WHERE key = $key";
+$sql = "UPDATE games  SET gamedesc = '$gamedesc', teamevent = '$teamevent' WHERE id = $id";
 echo $sql;
 
 $dbconn = pg_connect(
