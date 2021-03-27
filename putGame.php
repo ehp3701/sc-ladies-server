@@ -12,7 +12,6 @@ $gamedesc = $data->gamedesc;
 $teamevent = $data->teamevent;
 
 $sql = "UPDATE games  SET gamedesc = '$gamedesc', teamevent = '$teamevent' WHERE id = $id";
-echo $sql;
 
 $dbconn = pg_connect(
     "host=ec2-18-208-49-190.compute-1.amazonaws.com
