@@ -15,6 +15,7 @@ $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 if (pg_num_rows($result) > 0) {
     $emparray = array();
     while ($row = pg_fetch_array($result, null, PGSQL_ASSOC)) {
+        $row['id'] = intval($row['id']);
         array_push($emparray, $row);
     }
     echo json_encode($emparray);
